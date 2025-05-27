@@ -84,7 +84,7 @@ export default function DistributorRequests() {
 
         <div className="lg:col-span-2">
             <Card className="rounded-3xl">
-                <CardHeader className="border-b-2 flex flex-row">
+                <CardHeader className="border-b-2 flex flex-col md:flex-col xl:flex-row 2xl:flex-row">
                     <div className="flex items-center justify-between">
                         <div className="flex flex-col items-start justify-between mb-4">
                             <div className="flex gap-3">
@@ -98,7 +98,7 @@ export default function DistributorRequests() {
                             </div>
                         </div>
                     </div>
-                    <Tabs defaultValue="all" className="mt-8 ml-8">
+                    <Tabs defaultValue="all" className="mt-8 xl:ml-8 2xl:ml-8">
                         <TabsList className="rounded-3xl bg-gray-100">
                             <TabsTrigger value="all" className="rounded-l-3xl active:bg-green-700 hover:bg-blue-200">All</TabsTrigger>
                             <TabsTrigger value="pending" className="hover:bg-blue-200">Pending</TabsTrigger>
@@ -108,17 +108,17 @@ export default function DistributorRequests() {
                     </Tabs>
                 </CardHeader>
                 <CardContent className="mt-2">
-                    <div className="flex justify-between p-2 mx-5" >
-                        <div>Distributors Name</div>
-                        <div className="flex gap-16">
-                            <div className="ml-10">Status</div>
-                            <div>Contact No.</div>
-                            <div>Action</div>
-                        </div>
-                    </div>
                     <div className="space-y-4 h-[300px] overflow-y-scroll">
+                        <div className="flex justify-between sticky top-0 bg-inherit p-2 mx-5" >
+                            <div>Distributors Name</div>
+                            <div className="flex gap-16">
+                                <div className="ml-10">Status</div>
+                                <div>Contact No.</div>
+                                <div>Action</div>
+                            </div>
+                        </div>
                         {requests.map((request) => (
-                            <div key={request.id} className="flex items-center justify-between p-4 border rounded-lg">
+                            <div key={request.id} className="flex items-center justify-between p-4 rounded-lg">
                                 <div className="flex items-center gap-4">
                                     <Avatar>
                                         <AvatarImage src={request.avatar || "/placeholder.svg"} />

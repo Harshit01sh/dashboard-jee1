@@ -17,19 +17,20 @@ export const TopProducts = () => {
 
       <div className="space-y-2 -mt-8">
         <span className="text-xs text-gray-500 h-2">Based on order Qty</span>
-        <div className="grid grid-cols-4 gap-4 text-sm font-medium text-gray-500 pb-2">
-          <span>#</span>
-          <span>Name</span>
-          <span>Popularity</span>
-          <span className="ml-14">Sales</span>
-        </div>
+        
         
         <div className="overflow-y-auto h-[200px]">
+          <div className="grid grid-cols-4 gap-4 text-sm font-medium sticky top-0 bg-inherit text-gray-500 pb-2">
+          <span>#</span>
+          <span>Name</span>
+          <span className="ml-3 md:ml-0 xl:ml-0 2xl:ml-0">Popularity</span>
+          <span className="ml-16">Sales</span>
+        </div>
         {products.map((product) => (
           <div key={product.rank} className="grid grid-cols-4 gap-4 items-center py-3">
             <span className="text-sm font-medium text-gray-900">{product.rank}</span>
             <span className="text-sm text-gray-900">{product.name}</span>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 ml-3 md:ml-0 xl:ml-0 2xl:ml-0">
               <div className="flex-1 bg-gray-200 rounded-full h-2">
                 <div 
                   className={`${product.color} h-2 rounded-full`}
